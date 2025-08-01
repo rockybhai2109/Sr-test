@@ -67,14 +67,13 @@ async def is_user_verified(user_id):
 # List of big reactions that work
 BIG_REACTIONS = ["❤️", "🔥", "😘", "😍", "🥰", "👻", "🆒", "⚡", "😎", "🌚"]
 
-@app.on_message(filters.command("") & ~filters.edited)
-async def auto_react_on_all_commands(client: Client, message: Message):
+@app.on_message(filters.regex(r"^/") & (filters.private | filters.group))
+async def react_to_all_commands(client: Client, message: Message):
     try:
         emoji = random.choice(BIG_REACTIONS)
         await message.react(emoji)
     except Exception as e:
         print(f"[!] Reaction failed: {e}")
-
  
  
 @app.on_message(filters.command("start"))
