@@ -181,7 +181,7 @@ async def batch_link(_, message):
 
     freecheck = await chk_user(message, user_id)
     if freecheck == 1 and FREEMIUM_LIMIT == 0 and user_id not in OWNER_ID and not await is_user_verified(user_id):
-        await message.reply("Freemium service is currently not available. Upgrade to premium for access.")
+        await message.reply("Freemium service is currently not available. Upgrade to premium for access. see /plans 👀")
         return
 
     max_batch_size = FREEMIUM_LIMIT if freecheck == 1 else PREMIUM_LIMIT
@@ -277,7 +277,7 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by CHOSEN ONE ⚝__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by @CHOSEN_ONE_x_bot__**",
                         reply_markup=keyboard
                     )
 
@@ -286,7 +286,7 @@ async def batch_link(_, message):
             f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by CHOSEN ONE ⚝__**",
             reply_markup=keyboard
         )
-        await app.send_message(message.chat.id, "Batch completed successfully! 🎉")
+        await app.send_message(message.chat.id, "Batch completed successfully! 🎉\n\n You can start New /batch Now 😘")
 
     except Exception as e:
         await app.send_message(message.chat.id, f"Error: {e}")
@@ -302,7 +302,7 @@ async def stop_batch(_, message):
         users_loop[user_id] = False  # Set the loop status to False
         await app.send_message(
             message.chat.id, 
-            "Batch processing has been stopped successfully. You can start a new batch now if you want."
+            "Batch processing has been stopped successfully. You can start a new /batch now if you want."
         )
     elif user_id in users_loop and not users_loop[user_id]:
         await app.send_message(
