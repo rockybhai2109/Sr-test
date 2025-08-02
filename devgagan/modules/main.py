@@ -261,7 +261,7 @@ async def batch_link(_, message):
                 f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by CHOSEN ONE ⚝__**",
                 reply_markup=keyboard
             )
-            await app.send_message(message.chat.id, "😘 𝗖ꪮ𝗺𝗽𝗹𝗲𝘁𝗲 𝗛ꪮ 𝗚𝗮𝘆𝗮 𝗕ꪮ$$ 😎")
+            await app.send_message(message.chat.id, "🎉 𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮")
             return
             
         # Handle special links with userbot
@@ -277,16 +277,16 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by @CHOSEN_ONE_x_bot__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\nUnlock Unlimited Forwarding\n\n vivew /plans 👀\n\n**__Powered by @CHOSEN_ONE_x_bot__**",
                         reply_markup=keyboard
                     )
 
         await set_interval(user_id, interval_minutes=300)
         await pin_msg.edit_text(
-            f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by CHOSEN ONE ⚝__**",
+            f"😘 𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 for {cl} messages 🎉\n\nUnlock Unlimited Forwarding\n\n vivew /plans 👀**__Powered by @CHOSEN_ONE_x_bot__**",
             reply_markup=keyboard
         )
-        await app.send_message(message.chat.id, "Batch completed successfully! 🎉\n\n You can start New /batch Now 😘")
+        await app.send_message(message.chat.id, "𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮! 🎉\n\n You can start New /batch Now 😘")
 
     except Exception as e:
         await app.send_message(message.chat.id, f"Error: {e}")
@@ -302,7 +302,7 @@ async def stop_batch(_, message):
         users_loop[user_id] = False  # Set the loop status to False
         await app.send_message(
             message.chat.id, 
-            "Batch processing has been stopped successfully. You can start a new /batch now if you want."
+            "❗ Batch processing has been stopped successfully. You can start a new /batch now if you want."
         )
     elif user_id in users_loop and not users_loop[user_id]:
         await app.send_message(
