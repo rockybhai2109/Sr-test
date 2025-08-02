@@ -77,15 +77,11 @@ async def speedtest(event):
 ├ <b>Sponsor:</b> <code>{result['server']['sponsor']}</code>
 ├ <b>Latency:</b> <code>{result['server']['latency']}</code>
 ├ <b>Latitude:</b> <code>{result['server']['lat']}</code>
-╰ <b>Longitude:</b> <code>{result['server']['lon']}</code>
-╭─《 👤 CLIENT DETAILS 》
-├ <b>IP Address:</b> <code>{result['client']['ip']}</code>
-├ <b>Latitude:</b> <code>{result['client']['lat']}</code>
-├ <b>Longitude:</b> <code>{result['client']['lon']}</code>
+├ <b>Longitude:</b> <code>{result['server']['lon']}</code>
 ├ <b>Country:</b> <code>{result['client']['country']}</code>
 ├ <b>ISP:</b> <code>{result['client']['isp']}</code>
 ├ <b>ISP Rating:</b> <code>{result['client']['isprating']}</code>
-╰ <b>Powered by CHOSEN ONE ⚝</b> 
+╰ <b>Powered by @CHOSEN_ONE_x_bot ⚝</b> 
 '''
     try:
         await event.reply(string_speed,file=path,parse_mode='html')
