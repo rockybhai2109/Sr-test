@@ -57,12 +57,12 @@ def clean_filename(text):
     text = ''.join(
         char for char in text
         if not unicodedata.category(char).startswith('S')  # Symbols (includes emojis)
-        and not unicodedata.category(char).startswith('C')  # Other (control chars, etc.)
+        and not unicodedata.category(char).startswith('C')  # Control characters, etc.
         and not unicodedata.category(char).startswith('P')  # Punctuation
-        or char in ['.', '-', '_']  # keep basic filename-safe symbols
+        or char in ['.', '-']  # Keep only period and dash
     )
 
-    # Normalize spaces, dashes, underscores
+    # Replace any remaining underscores, spaces, or dashes with a single space
     text = re.sub(r'[_\s\-]+', ' ', text)
 
     # Final strip
@@ -852,7 +852,7 @@ user_caption_preferences = {}
 async def set_rename_command(user_id, custom_rename_tag):
     user_rename_preferences[str(user_id)] = custom_rename_tag
 
-get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '⛥ @II_LevelUp_II')
+get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '⚝ @CHOSEN_ONEx)
 
 async def set_caption_command(user_id, custom_caption):
     user_caption_preferences[str(user_id)] = custom_caption
