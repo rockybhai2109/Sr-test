@@ -784,9 +784,10 @@ def format_caption(original_caption, sender, custom_caption):
 
     # ✅ Symbol replacements
     original_caption = original_caption.replace("[", "〔").replace("]", "〕")
-    original_caption = original_caption.replace("(", "「").replace("]", "」")
+    original_caption = original_caption.replace("(", "「").replace(")", "」")
     original_caption = original_caption.replace("📕", "📙")
     original_caption = original_caption.replace("📽️", "🚜")
+    original_caption = original_caption.replace("📌", "💎")
 
     # ✅ Append custom caption if exists
     if custom_caption:
