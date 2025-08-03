@@ -758,16 +758,18 @@ def format_caption(original_caption, sender, custom_caption):
 
 
     # ✅ Replace "Downloaded By" with bot handle
+
     original_caption = re.sub(
-        r'(?:<u>)?(Downloaded[\s_]*By\s*[➤:>–\-]*\s*)([^\n<]*)(?:</u>)?',
-        r'\1@Src_pro_bot',
+        r'(?:📥)?\s*(Downloaded[\s_]*By)\s*[:➤>–\-]*\s*.*',
+        r'𖣐 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗱 𝗕𝘆: 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝',
         original_caption,
         flags=re.IGNORECASE
     )
+
     
     original_caption = re.sub(
         r'(⏫)?\s*<u>?\s*(Uploaded[\s_]*By)\s*[➤:>–\-]*\s*[^<\n]+</u>?',
-        r'⏫ Uploaded By ➤ Sᴛꪮʟᴇɴ Hᴀᴘᴘɪɴᴇss',
+        r'⏫ Uploaded By ➤ 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝',
         original_caption,
         flags=re.IGNORECASE
         )
@@ -781,9 +783,10 @@ def format_caption(original_caption, sender, custom_caption):
         original_caption = original_caption.replace(old, new)
 
     # ✅ Symbol replacements
-    original_caption = original_caption.replace("[", "〘").replace("]", "〙")
-    original_caption = original_caption.replace("📕", "📓")
-    original_caption = original_caption.replace("📽️", "🍀")
+    original_caption = original_caption.replace("[", "〔").replace("]", "〕")
+    original_caption = original_caption.replace("(", "「").replace("]", "」")
+    original_caption = original_caption.replace("📕", "📙")
+    original_caption = original_caption.replace("📽️", "🚜")
 
     # ✅ Append custom caption if exists
     if custom_caption:
