@@ -852,7 +852,7 @@ user_caption_preferences = {}
 async def set_rename_command(user_id, custom_rename_tag):
     user_rename_preferences[str(user_id)] = custom_rename_tag
 
-get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '⚝ @CHOSEN_ONEx)
+get_user_rename_preference = lambda user_id: user_rename_preferences.get(str(user_id), '🔥 @II_LevelUP_II 📈)
 
 async def set_caption_command(user_id, custom_caption):
     user_caption_preferences[str(user_id)] = custom_caption
@@ -1258,7 +1258,7 @@ async def rename_file(file, sender, caption=None):
     base_name = os.path.basename(base_name)
 
     # Apply text transformations
-    base_name = re.sub(r'@\w+', '@Chosen_Onex', base_name)  # Replace mentions
+    base_name = re.sub(r'@\w+', '⚝ @Chosen_Onex', base_name)  # Replace mentions
     for word in delete_words:
         base_name = base_name.replace(word, "")  # Remove banned words
     for word, replace_word in replacements.items():
