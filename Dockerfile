@@ -7,6 +7,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Update system & install dependencies
 RUN apt update && apt upgrade -y && \
     apt install -y \
+        libgl1 \
+        libglib2.0-0 \
+        libsm6 \
+        libxrender1 \
+        libxext6
         git \
         curl \
         python3-pip \
