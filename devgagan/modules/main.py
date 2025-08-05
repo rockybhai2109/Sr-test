@@ -251,14 +251,14 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by CHOSEN ONE ⚝__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\n**__Powered by CHOSEN ONE ⚝__\n\n /upgrade Your Plan 👀**",
                         reply_markup=keyboard
                     )
                     normal_links_handled = True
         if normal_links_handled:
             await set_interval(user_id, interval_minutes=300)
             await pin_msg.edit_text(
-                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by CHOSEN ONE ⚝__**",
+                f"Batch completed successfully for {cl} messages 🎉\n\n**__Powered by CHOSEN ONE ⚝__\n\n /upgrade Your Plan 👀**",
                 reply_markup=keyboard
             )
             await app.send_message(message.chat.id, "🎉 𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮")
@@ -277,13 +277,13 @@ async def batch_link(_, message):
                     msg = await app.send_message(message.chat.id, f"Processing...")
                     await process_and_upload_link(userbot, user_id, msg.id, link, 0, message)
                     await pin_msg.edit_text(
-                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\nUnlock Unlimited Forwarding\n\n vivew /plans 👀\n\n**__Powered by @CHOSEN_ONE_x_bot__**",
+                        f"Batch process started ⚡\nProcessing: {i - cs + 1}/{cl}\n\nUnlock Unlimited Forwarding\n\n view /plans 👀\n\n**__Powered by @CHOSEN_ONE_x_bot__\n\n/upgrade Your Plan 👀**",
                         reply_markup=keyboard
                     )
 
         await set_interval(user_id, interval_minutes=300)
         await pin_msg.edit_text(
-            f"😘 𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 for {cl} messages 🎉\n\nUnlock Unlimited Forwarding\n\n vivew /plans 👀**__Powered by @CHOSEN_ONE_x_bot__**",
+            f"😘 𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮 for {cl} messages 🎉\n\nUnlock Unlimited Forwarding\n\n view /plans 👀**__Powered by @CHOSEN_ONE_x_bot__\n\n/upgrade Your Plan 👀**",
             reply_markup=keyboard
         )
         await app.send_message(message.chat.id, "𝘽𝙖𝙩𝙘𝙝 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 𝙎𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮! 🎉\n\n You can start New /batch Now 😘")
