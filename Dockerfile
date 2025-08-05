@@ -11,7 +11,7 @@ RUN apt update && apt upgrade -y && \
         libglib2.0-0 \
         libsm6 \
         libxrender1 \
-        libxext6
+        libxext6 \
         git \
         curl \
         python3-pip \
