@@ -1,7 +1,10 @@
-FROM python:3.10-bookworm
+# Use a maintained base image
+FROM python:3.10-slim-bookworm
 
+# Prevent interactive prompts during build
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Update system & install dependencies
 RUN apt update && apt upgrade -y && \
     apt install -y \
         git \
@@ -11,20 +14,24 @@ RUN apt update && apt upgrade -y && \
         wget \
         bash \
         neofetch \
-        software-properties-common \
-        libglib2.0-0 libsm6 libxrender1 libxext6 libmediainfo0v5 && \
+        software-properties-common && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Copy requirements and install Python packages
 COPY requirements.txt .
 
 RUN pip3 install --no-cache-dir wheel && \
     pip3 install --no-cache-dir -r requirements.txt
 
+# Set working directory
 WORKDIR /app
 
+# Copy your app code
 COPY . .
 
+# Expose Flask app port
 EXPOSE 5000
 
-CMD ["python3", "-m", "devgagan"]
+# Run Flask + Python module
+CMD flask run -h 0.0.0.0 -p 5000 & python3 -m devgagan
