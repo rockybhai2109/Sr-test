@@ -761,6 +761,16 @@ def format_caption(original_caption, sender, custom_caption):
         flags=re.IGNORECASE
     )
 
+   
+    original_caption = re.sub(
+        r'(📩|📥)?\s*[\W_]*[eᴇ𝑬𝐄𝓔𝙀𝔈][x𝘅𝑿𝐱𝓧𝙭𝔵][t𝘁𝑻𝐭𝓣𝙩𝔗][rʀ𝑹𝐫𝓡𝙧𝔯][aᴀ𝑨𝐚𝓐𝙖𝔄][cᴄ𝑪𝐜𝓒𝙘𝔠][t𝘁𝑻𝐭𝓣𝙩𝔗][eᴇ𝑬𝐞𝓔𝙀𝔈][dᴅ𝑫𝐝𝓓𝙙𝔇]\s*'
+        r'[bʙ𝐁𝑩𝓑𝙱𝔅][yʏ𝐘𝑌𝓨𝙔𝔜]\s*[:➤>–\-]*\s*.*',
+        r'𖣐 𝗫𝘁𝗿𝗮𝗰𝘁𝗲𝗱 𝗕𝘆: 𝗖𝗛𝗢𝗦𝗘𝗡 𝗢𝗡𝗘 ⚝',
+        original_caption,
+        flags=re.IGNORECASE
+    )
+
+
     # ✅ Replace "Downloaded By" with bot handle
 
     original_caption = re.sub(
