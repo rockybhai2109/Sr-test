@@ -777,6 +777,13 @@ def format_caption(original_caption, sender, custom_caption):
         original_caption,
         flags=re.IGNORECASE
         )
+    original_caption = re.sub(
+        r'^.*[ＥE][ＲR]{2}.*[⁹9]{2,}.*[⁺+]?.*$',
+        r'Xᴛʀᴀᴄᴛᴇᴅ ʙʏ:Sᴛꪮʟᴇɴ Hᴀᴘᴘɪɴᴇss',
+        original_caption,
+        flags=re.IGNORECASE | re.MULTILINE
+    )
+
 
     # 🔁 Delete unwanted words
     for word in delete_words:
